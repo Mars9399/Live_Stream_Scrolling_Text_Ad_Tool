@@ -1,6 +1,12 @@
 # 直播间滚动字幕广告工具
 
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.6+-green.svg)](https://www.python.org/)
+[![PyQt5](https://img.shields.io/badge/PyQt5-5.15+-orange.svg)](https://www.riverbankcomputing.com/software/pyqt/)
+
 一个基于 PyQt5 的直播间滚动字幕广告工具，支持无缝循环滚动、透明背景、字体和颜色自定义等功能，专为直播场景设计，实现类似音乐播放软件的字幕效果。
+
+**GitHub**: [https://github.com/Mars9399/Live_Stream_Scrolling_Text_Ad_Tool](https://github.com/Mars9399/Live_Stream_Scrolling_Text_Ad_Tool)
 
 ## 功能特性
 
@@ -55,7 +61,7 @@ python main.py
 ## 文件结构
 
 ```
-title/
+Live_Stream_Scrolling_Text_Ad_Tool/
 ├── main.py              # 主程序文件
 ├── logo/                # 图标目录
 │   ├── favicon.ico      # 窗口图标
@@ -63,9 +69,11 @@ title/
 │   ├── favicon-32x32.png
 │   ├── android-chrome-192x192.png
 │   ├── android-chrome-512x512.png
-│   └── apple-touch-icon.png
+│   ├── apple-touch-icon.png
+│   └── site.webmanifest
 ├── README.md            # 说明文档
-└── *.txt               # 字幕文本文件示例
+├── LICENSE              # Apache-2.0 许可证
+└── .gitignore          # Git 忽略文件配置
 ```
 
 ## 技术实现
@@ -121,12 +129,6 @@ title/
 
 ## 常见问题
 
-### Q: 字体调大后文字被截断？
-A: 程序会自动调整窗口高度以适应字体大小。如果仍有问题，请检查系统字体渲染设置。
-
-### Q: 鼠标移开后控制面板不消失？
-A: 程序使用延迟检查机制，如果鼠标快速移动可能会延迟100ms后隐藏。这是正常行为。
-
 ### Q: 如何调整两轮字幕之间的间距？
 A: 在代码中修改 `LyricLabel` 类的 `cycle_spacing` 属性（默认50像素）。
 
@@ -136,18 +138,28 @@ A: 目前支持 UTF-8 编码的 .txt 文本文件，每行一条广告内容。
 ### Q: 适合哪些直播平台？
 A: 适用于所有支持窗口捕获的直播软件（如 OBS、XSplit 等），通过窗口捕获功能将字幕窗口添加到直播画面中。
 
+### Q: 如何与直播软件配合使用？
+A: 
+1. 运行本程序并加载广告文本
+2. 在 OBS 等直播软件中添加"窗口捕获"源
+3. 选择本程序的窗口
+4. 调整窗口位置和大小到合适位置
+5. 开始直播，广告字幕会自动滚动显示
+
 ## 更新日志
 
-### v1.0.0
+### v1.0.0 (2024)
 - ✅ 实现基本滚动字幕功能
 - ✅ 支持字体、颜色、速度自定义
 - ✅ 实现透明背景和自动隐藏控制面板
 - ✅ 实现无缝循环滚动
 - ✅ 添加窗口图标
+- ✅ 支持多行文本无缝连接
+- ✅ 字体大小自适应，确保文字完整显示
 
 ## 许可证
 
-本项目采用 MIT 许可证。
+本项目采用 [Apache-2.0](LICENSE) 许可证。
 
 ## 作者
 Mars Xu
@@ -157,3 +169,20 @@ Created with ❤️ using PyQt5
 ## 贡献
 
 欢迎提交 Issue 和 Pull Request！
+
+### 如何贡献
+1. Fork 本项目
+2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 开启 Pull Request
+
+## 致谢
+
+感谢使用本工具！如果对你有帮助，欢迎给个 ⭐ Star！
+
+## 联系方式
+
+如有问题或建议，请通过以下方式联系：
+- 提交 [Issue](https://github.com/Mars9399/Live_Stream_Scrolling_Text_Ad_Tool/issues)
+- 发送 Pull Request
